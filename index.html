@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Recherche personnalisée</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f4f4f4;
+    }
+    input {
+      padding: 10px;
+      width: 300px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Moteur de recherche 😈</h1>
+
+  <input type="text" id="search" placeholder="Tape ta recherche...">
+  <button onclick="rediriger()">Rechercher</button>
+
+  <script>
+    function rediriger() {
+      const texte = document.getElementById("search").value.toLowerCase().trim();
+
+      if (texte === "définition se faire laminer") {
+        window.location.href = "https://www.google.com/search?q=galatasaray+%E2%80%93+juventus";
+      } else {
+        alert("Aucune définition trouvée 😅");
+      }
+    }
+
+    // Permet d'appuyer sur Entrée
+    document.getElementById("search").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        rediriger();
+      }
+    });
+  </script>
+
+</body>
+</html>
